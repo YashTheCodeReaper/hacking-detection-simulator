@@ -1,7 +1,7 @@
 "use strict";
 
 // import UserLogic from user_logic.js
-import { UserLogic } from "./business_logic/user_logic.js";
+import { UserLogic, usersArray } from "./business_logic/user_logic.js";
 // import DomainLogic from domain_logic.js
 import { DomainLogic } from "./business_logic/domain_logic.js";
 
@@ -26,6 +26,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const randomDomainGenerateButton = document.querySelector(
     ".random-domain-button"
   );
+
+  let updateStatusButton;
+
+  const confirmationOverlay = document.querySelector(".conformation-overlay");
 
   // open form functionality for users
   addUserMainButton.addEventListener("click", function (e) {
@@ -164,8 +168,43 @@ document.addEventListener("DOMContentLoaded", function () {
             <td>${randomUser.status}</td>
           </tr>
             `;
+      const htmlUserStatus = `
+          <tr>
+            <td>${randomUser.name}</td>
+            <td>${randomUser.phone}</td>
+            <td>${randomUser.country}</td>
+            <td>                    
+              <select class="user-status-select" id="user-status">
+                <option value="NORMAL">NORMAL</option>
+                <option value="CLOSE">CLOSE</option>
+                <option value="CASE">CASE</option>
+              </select>
+              <button type="button" class="update-status-button" data-id="${i}">UPDATE</button>
+            </td>
+          </tr>
+            `;
       $(".user-table").append(html);
+      $(".user-status-table").append(htmlUserStatus);
     }
+    updateStatusButton = document.querySelectorAll(".update-status-button");
+
+    // Update status functionality
+    updateStatusButton.forEach((updateStatus) => {
+      updateStatus.addEventListener("click", function (e) {
+        e.preventDefault();
+        const changedValue = e.target.previousElementSibling.value;
+        const userId = e.target.getAttribute("data-id");
+        usersArray[userId].status = changedValue;
+
+        confirmationOverlay.textContent = `Successfully Changed status of ${usersArray[userId].name} to ${changedValue}`;
+        confirmationOverlay.style.transform =
+          "translate(-50%, -3%) translateY(0%)";
+        setTimeout(() => {
+          confirmationOverlay.style.transform =
+            "translate(-50%, -3%) translateY(-200%)";
+        }, 2000);
+      });
+    });
   });
 
   // generate 5 random domains

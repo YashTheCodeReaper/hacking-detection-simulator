@@ -11,9 +11,29 @@ html {
 }
 
 body{
+  position: relative;
   font-family: 'Source Sans Pro', sans-serif;
   background: #e0e0e0;
   color: #444;
+}
+
+/* Confirmation Overlay */
+.conformation-overlay{
+  position: fixed;
+  height: 20rem;
+  width: 60rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  top: 3%;
+  left: 50%;
+  transform: translate(-50%, -3%) translateY(-200%);
+  background: #222;
+  border-radius: 2rem;
+  color: #e0e0e0;
+  transition: all 300ms ease-in-out;
 }
 
 /* Form Overlay */

@@ -13,31 +13,7 @@
     <title>Hacking Detection Simulator</title>
   </head>
   <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="header-flex">
-        <h3 class="logo-text">Hacking Detection Simulator</h3>
-        <nav class="header-navigation">
-          <ul class="navigation-list">
-            <li class="navigation-list-item">
-              <a class="primary-link" href="/index.html">Users</a>
-            </li>
-            <li class="navigation-list-item">
-              <a class="primary-link" href="/domains.html">Domains</a>
-            </li>
-            <li class="navigation-list-item">
-              <a class="primary-link" href="">User Status</a>
-            </li>
-            <li class="navigation-list-item">
-              <a class="primary-link" href="">Master Visit</a>
-            </li>
-            <li class="navigation-list-item">
-              <a class="primary-link" href="">Simulate</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <div class="conformation-overlay"></div>
     <!-- Form for users -->
     <div class="form-overlay-users">
       <div class="form-container">
@@ -80,6 +56,31 @@
         <button type="button" id="cancel-button-domains">CANCEL</button>
       </div>
     </div>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-flex">
+        <h3 class="logo-text">Hacking Detection Simulator</h3>
+        <nav class="header-navigation">
+          <ul class="navigation-list">
+            <li class="navigation-list-item">
+              <a class="primary-link" href="/index.html">Users</a>
+            </li>
+            <li class="navigation-list-item">
+              <a class="primary-link" href="/domains.html">Domains</a>
+            </li>
+            <li class="navigation-list-item">
+              <a class="primary-link" href="">User Status</a>
+            </li>
+            <li class="navigation-list-item">
+              <a class="primary-link" href="">Master Visit</a>
+            </li>
+            <li class="navigation-list-item">
+              <a class="primary-link" href="">Simulate</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
     <!-- Main section starts -->
     <main class="main">
       <!-- Users section -->
@@ -112,6 +113,18 @@
             <th>Name</th>
             <th>IP</th>
             <th>Owner</th>
+            <th>Status</th>
+          </tr>
+        </table>
+      </section>
+      <!-- User status section -->
+      <h1 style="text-align: center; text-transform: uppercase; font-size: 3rem; margin-top: 5rem;" class="primary-heading">Change User Status Here</h1>
+      <section id="user-status" class="section">
+        <table class="user-status-table">
+          <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Country</th>
             <th>Status</th>
           </tr>
         </table>
