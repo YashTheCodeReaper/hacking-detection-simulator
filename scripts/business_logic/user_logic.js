@@ -6,6 +6,6 @@ export class UserLogic extends User {
   constructor(name, country, phone) {
     super(name, country, phone);
     this.visitHistory = [];
-    this.status = "Normal";
+    this.status = "NORMAL";
   }
 }
