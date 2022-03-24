@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
             <td>${userName}</td>
             <td>${userPhone}</td>
             <td>${userCountry}</td>
-            <td>${userStatus}</td>
           </tr>
             `;
     $("table").append(html);
