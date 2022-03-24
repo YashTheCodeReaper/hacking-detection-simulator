@@ -13,36 +13,17 @@
     <title>Hacking Detection Simulator</title>
   </head>
   <body>
-    <div class="form-overlay">
-      <div class="form-container">
-        <form>
-          <div class="input-group">
-            <label for="name">Enter Full Name:</label>
-            <input type="text" name="name" id="user-name" required />
-          </div>
-          <div class="input-group">
-            <label for="phone">Enter Phone Number:</label>
-            <input type="text" name="phone" id="user-phone" required />
-          </div>
-          <div class="input-group">
-            <label for="country">Enter Country:</label>
-            <input type="text" name="country" id="user-country" required />
-          </div>
-          <button type="submit" id="add-button">ADD</button>
-        </form>
-        <button type="button" id="cancel-button">CANCEL</button>
-      </div>
-    </div>
+    <!-- Header -->
     <header class="header">
       <div class="header-flex">
         <h3 class="logo-text">Hacking Detection Simulator</h3>
         <nav class="header-navigation">
           <ul class="navigation-list">
             <li class="navigation-list-item">
-              <a class="primary-link" href="/">Users</a>
+              <a class="primary-link" href="/index.html">Users</a>
             </li>
             <li class="navigation-list-item">
-              <a class="primary-link" href="">Domains</a>
+              <a class="primary-link" href="/domains.html">Domains</a>
             </li>
             <li class="navigation-list-item">
               <a class="primary-link" href="">User Status</a>
@@ -57,13 +38,59 @@
         </nav>
       </div>
     </header>
+    <!-- Form for users -->
+    <div class="form-overlay-users">
+      <div class="form-container">
+        <form>
+          <div class="input-group">
+            <label for="name">Enter Full Name:</label>
+            <input type="text" name="name" id="user-name" required />
+          </div>
+          <div class="input-group">
+            <label for="phone">Enter Phone Number:</label>
+            <input type="text" name="phone" id="user-phone" required />
+          </div>
+          <div class="input-group">
+            <label for="country">Enter Country:</label>
+            <input type="text" name="country" id="user-country" required />
+          </div>
+          <button type="submit" id="add-button-users">ADD</button>
+        </form>
+        <button type="button" id="cancel-button-users">CANCEL</button>
+      </div>
+    </div>
+    <!-- Form for domains -->
+    <div class="form-overlay-domain">
+      <div class="form-container">
+        <form>
+          <div class="input-group">
+            <label for="name">Enter Domain Name:</label>
+            <input type="text" name="name" id="domain-name" required />
+          </div>
+          <div class="input-group">
+            <label for="ip">Enter Domain IP:</label>
+            <input type="text" name="ip" id="domain-ip" required />
+          </div>
+          <div class="input-group">
+            <label for="owner">Enter Owner:</label>
+            <input type="text" name="owner" id="domain-owner" required />
+          </div>
+          <button type="submit" id="add-button-domains">ADD</button>
+        </form>
+        <button type="button" id="cancel-button-domains">CANCEL</button>
+      </div>
+    </div>
+    <!-- Main section starts -->
     <main class="main">
-      <section class="section users">
+      <!-- Users section -->
+      <section id="users" class="section">
         <div class="links-flex">
-          <a href="" class="primary-link random-user-button">Generate 10 Random User</a>
+          <a href="" class="primary-link random-user-button"
+            >Generate 10 Random Users</a
+          >
           <a href="" class="primary-link add-user-main-button">Add User</a>
         </div>
-        <table>
+        <table class="user-table">
           <tr>
             <th>Name</th>
             <th>Phone</th>
@@ -72,8 +99,25 @@
           </tr>
         </table>
       </section>
+      <!-- Domains-section -->
+      <section id="domains" class="section">
+        <div class="links-flex">
+          <a href="" class="primary-link random-domain-button"
+            >Generate 10 Random Domains</a
+          >
+          <a href="" class="primary-link add-domain-main-button">Add Domain</a>
+        </div>
+        <table class="domain-table">
+          <tr>
+            <th>Name</th>
+            <th>IP</th>
+            <th>Owner</th>
+            <th>Status</th>
+          </tr>
+        </table>
+      </section>
     </main>
     <script src="scripts/jquery.js"></script>
-    <script type="module" src="scripts/users.js"></script>
+    <script type="module" src="scripts/main.js"></script>
   </body>
 </html>

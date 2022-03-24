@@ -17,7 +17,7 @@ body{
 }
 
 /* Form Overlay */
-.form-overlay{
+.form-overlay-users, .form-overlay-domain{
   width: 100vw;
   height: 100vh;
   position: fixed;

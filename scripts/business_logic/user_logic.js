@@ -8,4 +8,14 @@ export class UserLogic extends User {
     this.visitHistory = [];
     this.status = "NORMAL";
   }
+
+  register() {
+    usersArray.push({
+      name: this.name,
+      country: this.country,
+      phone: this.phone,
+      status: this.status,
+      visitHistory: this.visitHistory,
+    });
+  }
 }
