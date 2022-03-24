@@ -24,14 +24,15 @@ document.addEventListener("DOMContentLoaded", function () {
     let userPhone = document.getElementById("user-phone").value;
     let userCountry = document.getElementById("user-country").value;
 
-    if (!userName || !userCountry || !userPhone) return;
-    usersArray.push(new UserLogic(userName, userCountry, userPhone));
+      if (!userName || !userCountry || !userPhone) return;
+      const user = new UserLogic(userName, userCountry, userPhone);
+      usersArray.push(user);
 
-    const html = `
+      const html = `
           <tr>
-            <td>${userName}</td>
-            <td>${userPhone}</td>
-            <td>${userCountry}</td>
+            <td>${user.name}</td>
+            <td>${user.phone}</td>
+            <td>${user.country}</td>
             <td>${user.status}</td>
           </tr>
             `;
