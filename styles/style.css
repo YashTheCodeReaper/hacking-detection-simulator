@@ -66,3 +66,41 @@ body{
 .primary-link:active{
   box-shadow: 5px 5px 7px  rgba(0, 0, 0, 0.3);
 }
+
+.section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 3rem;
+}
+
+/* Users Section */
+table{
+  width: 80vw;
+}
+
+th{
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 0.5rem 1.3rem;
+}
+
+td{
+  font-size: 1.8rem;
+  font-weight: 400;
+  padding: 0.5rem 1.3rem;
+}
+
+tr{
+  color: #fff;
+  background-color: #999;
+}
+
+tr:first-child{
+  color: #e0e0e0;
+  background-color: #444;
+}
