@@ -16,6 +16,96 @@ body{
   color: #444;
 }
 
+/* Form Overlay */
+.form-overlay{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100%);
+  transition: all 500ms ease-in-out;
+}
+
+.form-container{
+  width: 50rem;
+  height: 50rem;
+  background: #444;
+  overflow: hidden;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.input-group{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+label{
+  color: #e0e0e0;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+input{
+  background: transparent;
+  border-radius: 1rem;
+  padding: 0.5rem 2rem;
+  color: #e0e0e0;
+}
+
+select{
+  background: transparent;
+  border-radius: 1rem;
+  padding: 0.5rem 2rem;
+  color: #e0e0e0;
+}
+
+option{
+  background: transparent;
+  border-radius: 1rem;
+  padding: 0.5rem 2rem;
+  color: #444;
+}
+
+.add-button:link{
+  background: #e0e0e0;
+}
+
+button{
+  background: #e0e0e0;
+  color: #444;
+  padding: 0.5rem 1.6rem;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+button:hover{
+  background: #969696;
+  color: rgb(48, 48, 48);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
 /* Header Section */
 
 .header{

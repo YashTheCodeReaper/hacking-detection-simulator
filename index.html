@@ -13,6 +13,34 @@
     <title>Hacking Detection Simulator</title>
   </head>
   <body>
+    <div class="form-overlay">
+      <div class="form-container">
+        <form>
+          <div class="input-group">
+            <label for="name">Enter Full Name:</label>
+            <input type="text" name="name" id="user-name" required/>
+          </div>
+          <div class="input-group">
+            <label for="phone">Enter Phone Number:</label>
+            <input type="text" name="phone" id="user-phone" required/>
+          </div>
+          <div class="input-group">
+            <label for="country">Enter Country:</label>
+            <input type="text" name="country" id="user-country" required/>
+          </div>
+          <div class="input-group">
+            <label for="country">Select Status:</label>
+            <select name="country" id="user-status">
+              <option value="NORMAL">NORMAL</option>
+              <option value="CASE">CASE</option>
+              <option value="CLOSE">CLOSE</option>
+            </select>
+          </div>
+        </form>
+        <button type="button" id="add-button">ADD</button>
+        <button type="button" id="cancel-button">CANCEL</button>
+      </div>
+    </div>
     <header class="header">
       <div class="header-flex">
         <h3 class="logo-text">Hacking Detection Simulator</h3>
