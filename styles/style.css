@@ -166,6 +166,14 @@ button:hover{
 }
 
 /* Users Section */
+
+.links-flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
 table{
   width: 80vw;
 }

@@ -18,23 +18,15 @@
         <form>
           <div class="input-group">
             <label for="name">Enter Full Name:</label>
-            <input type="text" name="name" id="user-name" required/>
+            <input type="text" name="name" id="user-name" required />
           </div>
           <div class="input-group">
             <label for="phone">Enter Phone Number:</label>
-            <input type="text" name="phone" id="user-phone" required/>
+            <input type="text" name="phone" id="user-phone" required />
           </div>
           <div class="input-group">
             <label for="country">Enter Country:</label>
-            <input type="text" name="country" id="user-country" required/>
-          </div>
-          <div class="input-group">
-            <label for="country">Select Status:</label>
-            <select name="country" id="user-status">
-              <option value="NORMAL">NORMAL</option>
-              <option value="CASE">CASE</option>
-              <option value="CLOSE">CLOSE</option>
-            </select>
+            <input type="text" name="country" id="user-country" required />
           </div>
           <button type="submit" id="add-button">ADD</button>
         </form>
@@ -67,7 +59,10 @@
     </header>
     <main class="main">
       <section class="section users">
-        <a href="" class="primary-link add-user-main-button">Add User</a>
+        <div class="links-flex">
+          <a href="" class="primary-link random-user-button">Generate 30 Random User</a>
+          <a href="" class="primary-link add-user-main-button">Add User</a>
+        </div>
         <table>
           <tr>
             <th>Name</th>

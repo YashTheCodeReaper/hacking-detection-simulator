@@ -23,9 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let userName = document.getElementById("user-name").value;
     let userPhone = document.getElementById("user-phone").value;
     let userCountry = document.getElementById("user-country").value;
-    let userStatus = document.getElementById("user-status").value;
 
-    if (!userName || !userCountry || !userPhone || !userStatus) return;
+    if (!userName || !userCountry || !userPhone) return;
     usersArray.push(new UserLogic(userName, userCountry, userPhone));
 
     const html = `
