@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let updateStatusButton;
   const confirmationOverlay = document.querySelector(".conformation-overlay");
   const randomVisitButton = document.querySelector(".random-visit-button");
+  const simulateButton = document.querySelector(".simulate-button");
 
   // open form functionality for users
   addUserMainButton.addEventListener("click", function (e) {
@@ -291,5 +292,43 @@ document.addEventListener("DOMContentLoaded", function () {
         $(".master-visit-table").append(html);
       }
     }
+  });
+
+  // Simulate functionality
+  simulateButton.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    // Loop through usersArray
+    usersArray.forEach((user) => {
+      // If the user is a case
+      if (user.status == "CASE") {
+        // loop through all domain
+        domainsArray.forEach((domain) => {
+          let timeStamp = 0;
+          // loop through all checkins of that domain
+          domain.userCheckins.forEach((checkin) => {
+            // if the user has checked in that domain, mark that domain as a case
+            if (checkin.userObj.name == user.name) {
+              domain.status = "CASE";
+              timeStamp = checkin.time;
+              // at the same time check for other user vulnerability within 1 hr range
+              domain.userCheckins.forEach((checkinNew) => {
+                if (checkinNew.userObj.name != user.name) {
+                  if (Math.abs(checkinNew.time - timeStamp) < 3599000) {
+                    checkinNew.userObj.status = "CLOSE";
+                  }
+                }
+              });
+            }
+            // check for other user vulnerability within 1 hr range
+            else {
+              if (Math.abs(checkin.time - timeStamp) < 3599000) {
+                checkin.userObj.status = "CLOSE";
+              }
+            }
+          });
+        });
+      }
+    });
   });
 });
