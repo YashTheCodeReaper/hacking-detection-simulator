@@ -20,7 +20,7 @@ body{
 /* Confirmation Overlay */
 .conformation-overlay{
   position: fixed;
-  height: 20rem;
+  height: 10rem;
   width: 60rem;
   display: flex;
   align-items: center;

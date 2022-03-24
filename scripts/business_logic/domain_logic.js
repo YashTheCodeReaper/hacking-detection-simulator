@@ -8,14 +8,7 @@ export class DomainLogic extends Domain {
     this.userCheckins = [];
     this.status = "NORMAL";
   }
-
-  register() {
-    domainsArray.push({
-      name: this.name,
-      ip: this.ip,
-      owner: this.owner,
-      status: this.status,
-      userCheckins: this.userCheckins,
-    });
+  onUserVisit(userObj, time) {
+    this.userCheckins.push({ userObj, time });
   }
 }

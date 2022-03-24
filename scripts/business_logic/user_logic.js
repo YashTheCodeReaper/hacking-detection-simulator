@@ -9,13 +9,7 @@ export class UserLogic extends User {
     this.status = "NORMAL";
   }
 
-  register() {
-    usersArray.push({
-      name: this.name,
-      country: this.country,
-      phone: this.phone,
-      status: this.status,
-      visitHistory: this.visitHistory,
-    });
+  onDomainVisit(domainObj, time) {
+    this.visitHistory.push({ domainObj, time });
   }
 }

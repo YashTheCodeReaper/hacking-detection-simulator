@@ -3,7 +3,7 @@
 // import UserLogic from user_logic.js
 import { UserLogic, usersArray } from "./business_logic/user_logic.js";
 // import DomainLogic from domain_logic.js
-import { DomainLogic } from "./business_logic/domain_logic.js";
+import { DomainLogic, domainsArray } from "./business_logic/domain_logic.js";
 
 // after DOM tree creation
 document.addEventListener("DOMContentLoaded", function () {
@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   let updateStatusButton;
-
   const confirmationOverlay = document.querySelector(".conformation-overlay");
+  const randomVisitButton = document.querySelector(".random-visit-button");
 
   // open form functionality for users
   addUserMainButton.addEventListener("click", function (e) {
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!userName || !userCountry || !userPhone) return;
     // if no null, create UserLogic and add it to usersArray
     const user = new UserLogic(userName, userCountry, userPhone);
-    user.register();
+    usersArray.push(user);
 
     // append a new html tr for the added user
     const html = `
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!domainName || !domainIP || !domainOwner) return;
     // if no null, create DomainLogic and add it to domainsArray
     const domain = new DomainLogic(domainName, domainIP, domainOwner);
-    domain.register();
+    domainsArray.push(domain);
 
     // append a new html tr for the added domain
     const html = `
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
         sampleCountry[i],
         samplePhones[i]
       );
-      randomUser.register();
+      usersArray.push(randomUser);
 
       // append a new html tr for the generated user
       const html = `
@@ -238,7 +238,7 @@ document.addEventListener("DOMContentLoaded", function () {
         sampleIps[i],
         sampleOwners[i]
       );
-      randomDomain.register();
+      domainsArray.push(randomDomain);
 
       // append a new html tr for the generated domains
       const html = `
@@ -250,6 +250,46 @@ document.addEventListener("DOMContentLoaded", function () {
           </tr>
             `;
       $(".domain-table").append(html);
+    }
+  });
+
+  // generating random visits functionality
+  randomVisitButton.addEventListener("click", function (e) {
+    e.preventDefault();
+    // if there are no users or there are no domains, then return
+    if (domainsArray.length === 0 || usersArray.length === 0) return;
+    else {
+      // loop 30 times, make visits.
+      for (let i = 0; i < 30; i++) {
+        const randomUser = Math.floor(Math.random() * usersArray.length);
+        const randomDomain = Math.floor(Math.random() * domainsArray.length);
+        const randomDate = Math.ceil(
+          Math.random() * (Date.now() - (Date.now() - 86400000))
+        );
+
+        const randomUserObj = usersArray[randomUser];
+        const randomDomainObj = domainsArray[randomDomain];
+
+        randomUserObj.onDomainVisit(randomDomainObj, Date.now() - randomDate);
+        randomDomainObj.onUserVisit(randomUserObj, Date.now() - randomDate);
+
+        const formatTime = new Date(
+          randomUserObj.visitHistory[randomUserObj.visitHistory.length - 1].time
+        ).toLocaleString();
+
+        // create html for table data
+        const html = `
+          <tr>
+            <td>${randomUserObj.name}</td>
+            <td>${randomDomainObj.name}</td>
+            <td>${formatTime}</td>
+            <td>${randomUserObj.status}</td>
+          </tr>
+        `;
+
+        // add each random visit to master table
+        $(".master-visit-table").append(html);
+      }
     }
   });
 });
