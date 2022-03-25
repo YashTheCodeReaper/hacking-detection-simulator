@@ -330,5 +330,47 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
     });
+
+    // Append domain report
+    domainsArray.forEach((domain) => {
+      const html = `
+      <tr>
+        <td>${domain.name}</td>
+        <td>${domain.ip}</td>
+        <td>${domain.owner}</td>
+        <td style="color: ${domain.status == "CASE" ? "red" : "green"}">${
+        domain.status == "CASE" ? "VULNERABLE" : "SAFE"
+      }</td>
+      </tr>
+      `;
+
+      $(".simulation-result-table-domains").append(html);
+    });
+
+    // Append users report
+    usersArray.forEach((user) => {
+      let color;
+      let state;
+      if (user.status == "CASE") {
+        color = "red";
+        state = "VULNERABLE";
+      } else if (user.status == "CLOSE") {
+        color = "orange";
+        state = "EXPOSED";
+      } else {
+        color = "green";
+        state = "SAFE";
+      }
+      const html = `
+      <tr>
+        <td>${user.name}</td>
+        <td>${user.phone}</td>
+        <td>${user.country}</td>
+        <td style="color: ${color}">${state}</td>
+      </tr>
+      `;
+
+      $(".simulation-result-table-users").append(html);
+    });
   });
 });
