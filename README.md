@@ -33,32 +33,29 @@ Workflow:
 1-Home Page
 ![](Screenshots/img1.png)
 
-2-Home Page
+2-Generate 10 Users with Preloaded Array Data
 ![](Screenshots/img2.png)
 
-3-Generate 10 Users with Preloaded Array Data
-![](Screenshots/img3.png)
-
-4-Manually Add a User
+3-Manually Add a User
 ![](Screenshots/img4.png)
 
-5-Generate 5 Domains with Preloaded Array Data
+4-Generate 5 Domains with Preloaded Array Data
 ![](Screenshots/img5.png)
 
-6-Manually Add Domain
+5-Manually Add Domain
 ![](Screenshots/img6.png)
 
-7-Change Users Status Here
+6-Change Users Status Here
 ![](Screenshots/img7.png)
 
-8-Successful Status Change Indicator
+7-Successful Status Change Indicator
 ![](Screenshots/img8.png)
 
-9-Generated Random Visits by Random Users to Random Websites as Random Time(within 24 hr range)
+8-Generated Random Visits by Random Users to Random Websites as Random Time(within 24 hr range)
 ![](Screenshots/img9.png)
 
-10-Automatically Generated Vulnerable Websited Report
+9-Automatically Generated Vulnerable Websited Report
 ![](Screenshots/img10.png)
 
-11-Automatically Generated Vulnerable Users and Exposed Users Report
+10-Automatically Generated Vulnerable Users and Exposed Users Report
 ![](Screenshots/img11.png)
