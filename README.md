@@ -34,10 +34,10 @@ Workflow:
 ![](Screenshots/img1.png)
 
 2-Home Page
-![](Screenshots/img1.png)
+![](Screenshots/img2.png)
 
 3-Generate 10 Users with Preloaded Array Data
-![](Screenshots/img1.png)
+![](Screenshots/img3.png)
 
 4-Manually Add a User
 ![](Screenshots/img4.png)
